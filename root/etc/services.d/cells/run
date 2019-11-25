@@ -1,0 +1,10 @@
+#!/usr/bin/with-contenv bash
+
+if [ -f /config/.config/pydio/cells/pydio.json ]; then
+    RUN_OPTS="start"
+else
+    RUN_OPTS="install --bind 0.0.0.0:8080 --external $EXTERNALURL --no_tls"
+fi
+
+exec \
+    s6-setuidgid abc /app/cells ${RUN_OPTS}
