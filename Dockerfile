@@ -59,7 +59,7 @@ LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DA
 LABEL maintainer="aptalca"
 
 # environment settings
-ENV HOME="/config"
+ENV HOME="/config" CELLS_WORKING_DIR="/config"
 
 # copy files from build stage
 COPY --from=buildstage /app/cells /app/cells
