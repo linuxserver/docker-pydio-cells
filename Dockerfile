@@ -52,16 +52,18 @@ RUN \
 ############## runtime stage ##############
 FROM lsiobase/alpine:3.10
 
-# set version label
 ARG BUILD_DATE
 ARG VERSION
 LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
 LABEL maintainer="aptalca"
 
-# environment settings
 ENV HOME="/config" CELLS_WORKING_DIR="/config"
 
-# copy files from build stage
+RUN \
+ echo "**** install runtime packages ****" && \
+ apk add --no-cache \
+	jq
+
 COPY --from=buildstage /app/cells /app/cells
 
 COPY root/ /
