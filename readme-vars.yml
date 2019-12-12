@@ -23,13 +23,16 @@ development_versions_items:
 # container parameters
 common_param_env_vars_enabled: true #PGID, PUID, etc, you can set it to 'optional'
 param_container_name: "{{ project_name }}"
+param_usage_include_hostname: true #you can set it to 'optional'
+param_hostname: "{{ project_name }}"
+param_hostname_desc: "Pydio Cells uses the hostname to verify local files. This setting is required and should not be changed after it has been set."
 param_usage_include_net: false #you can set it to 'optional'
 param_net: "host"
 param_net_desc: "Shares host networking with container."
 param_usage_include_env: true
 param_env_vars:
   - { env_var: "TZ", env_value: "Europe/London", desc: "Specify a timezone to use EG Europe/London." }
-  - { env_var: "EXTERNALURL", env_value: "yourdomain.url", desc: "The external url you would like to use to access Pydio Cells (Can be domain or IP:PORT)." }
+  - { env_var: "EXTERNALURL", env_value: "yourdomain.url", desc: "The external url you would like to use to access Pydio Cells (Can be https://domain.url or http://IP:PORT)." }
 param_usage_include_vols: true
 param_volumes:
   - { vol_path: "/config", vol_host_path: "</path/to/appdata/config>", desc: "All the config files reside here." }
@@ -71,4 +74,4 @@ app_setup_block: |
 
 # changelog
 changelogs:
-  - { date: "25.11.19:", desc: "Initial Release" }
+  - { date: "12.12.19:", desc: "Initial Release" }
