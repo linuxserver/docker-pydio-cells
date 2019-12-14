@@ -1,0 +1,15 @@
+#!/usr/bin/with-contenv bash
+
+if [ -f /config/pydio.json ]; then
+    CURRENTURL=$(jq -r '.defaults.url' /config/pydio.json)
+    if [ "$CURRENTURL" != "$EXTERNALURL" ]; then
+        echo "Updating external url from environment variable."
+        jq  ".defaults.url = \"$EXTERNALURL\"" /config/pydio.json > /tmp/pydio.json
+        mv /tmp/pydio.json /config/pydio.json
+    fi
+fi
+
+# permissions
+chown -R abc:abc \
+    /app \
+    /config

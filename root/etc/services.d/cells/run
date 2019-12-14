@@ -1,0 +1,18 @@
+#!/usr/bin/with-contenv bash
+
+_term() {
+  echo "Caught SIGTERM signal! Stopping cells."
+  kill -2 "$pid"
+}
+
+if [ -f /config/pydio.json ]; then
+    RUN_OPTS="start"
+else
+    RUN_OPTS="install --bind 0.0.0.0:8080 --external $EXTERNALURL --no_tls"
+fi
+
+trap _term SIGTERM
+
+s6-setuidgid abc /app/cells ${RUN_OPTS} & pid=$!
+
+wait
