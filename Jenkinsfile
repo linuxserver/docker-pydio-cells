@@ -29,7 +29,7 @@ pipeline {
     DIST_IMAGE = 'alpine'
     MULTIARCH='false'
     CI='true'
-    CI_WEB='false'
+    CI_WEB='true'
     CI_PORT='8080'
     CI_SSL='false'
     CI_DELAY='120'
