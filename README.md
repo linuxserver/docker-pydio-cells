@@ -68,7 +68,7 @@ docker create \
   -e TZ=Europe/London \
   -e EXTERNALURL=yourdomain.url \
   -p 8080:8080 \
-  -v </path/to/appdata/config>:/config \
+  -v /path/to/appdata/config:/config \
   --restart unless-stopped \
   linuxserver/pydio-cells
 ```
@@ -92,7 +92,7 @@ services:
       - TZ=Europe/London
       - EXTERNALURL=yourdomain.url
     volumes:
-      - </path/to/appdata/config>:/config
+      - /path/to/appdata/config:/config
     ports:
       - 8080:8080
     restart: unless-stopped
@@ -142,6 +142,8 @@ In this instance `PUID=1000` and `PGID=1000`, to find yours use `id user` as bel
 ## Application Setup
 
 You must first create a mysql database for Pydio Cells. Using our [mariadb image](https://hub.docker.com/r/linuxserver/mariadb) is recommended.  
+
+Then access the web gui setup wizard at `http://SERVER_IP:8080`
 
 
 ## Docker Mods
@@ -214,5 +216,6 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **17.04.20:** - Update compile options, previous release was broken for new installs.
 * **19.12.19:** - Rebasing to alpine 3.11.
 * **12.12.19:** - Initial Release

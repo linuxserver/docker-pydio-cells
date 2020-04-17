@@ -14,6 +14,7 @@ RUN \
 	gcc \
 	git \
 	go \
+	grep \
 	tar && \
  echo "**** fetch source code ****" && \
  mkdir -p \
@@ -29,10 +30,10 @@ RUN \
 	/tmp/cells-src.tar.gz -C \
 	/tmp/src/github.com/pydio/cells --strip-components=1 && \
  echo "**** compile cells  ****" && \
- go get -u github.com/gobuffalo/packr/packr && \
+ go get -u github.com/pydio/packr/packr && \
  cd /tmp/src/github.com/pydio/cells && \
  find . -name *-packr.go | xargs rm -f && \
- grep -ri -l "packr.NewBox" */* | \
+ grep -ri --exclude-dir=vendor/* --exclude-dir=frontend/front-srv/assets/* -l "packr.NewBox" */* | \
 	while read -r line; do \
 		if ! [ "$$line" = "vendor/github.com/ory/x/dbal/migrate.go" ]; then \
 			cd `dirname "$$line"`; \
@@ -58,11 +59,6 @@ LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DA
 LABEL maintainer="aptalca"
 
 ENV HOME="/config" CELLS_WORKING_DIR="/config"
-
-RUN \
- echo "**** install runtime packages ****" && \
- apk add --no-cache \
-	jq
 
 COPY --from=buildstage /app/cells /app/cells
 
