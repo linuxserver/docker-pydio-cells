@@ -32,7 +32,7 @@ param_net_desc: "Shares host networking with container."
 param_usage_include_env: true
 param_env_vars:
   - { env_var: "TZ", env_value: "Europe/London", desc: "Specify a timezone to use EG Europe/London." }
-  - { env_var: "EXTERNALURL", env_value: "yourdomain.url", desc: "The external url you would like to use to access Pydio Cells (Can be https://domain.url or http://IP:PORT)." }
+  - { env_var: "EXTERNALURL", env_value: "yourdomain.url", desc: "The external url you would like to use to access Pydio Cells (Can be https://domain.url or https://IP:PORT)." }
 param_usage_include_vols: true
 param_volumes:
   - { vol_path: "/config", vol_host_path: "/path/to/appdata/config", desc: "All the config files reside here." }
@@ -47,15 +47,15 @@ cap_add_param_vars:
   - { cap_add_var: "NET_ADMIN" }
 
 # optional container parameters
-opt_param_usage_include_env: false
+opt_param_usage_include_env: true
 opt_param_env_vars:
-  - { env_var: "STAGING", env_value: "false", desc: "Set to `true` to retrieve certs in staging mode. Rate limits will be much higher, but the resulting cert will not pass the browser's security test. Only to be used for testing purposes." }
+  - { env_var: "SERVER_IP", env_value: "0.0.0.0", desc: "Enter the LAN IP of the docker server. Required for local access by IP, added to self signed cert as SAN (not required if accessing only through reverse proxy)." }
 opt_param_usage_include_vols: false
 opt_param_volumes:
   - { vol_path: "/config", vol_host_path: "/path/to/appdata/config", desc: "Folder where configuration and data files reside." }
-opt_param_usage_include_ports: false
+opt_param_usage_include_ports: true
 opt_param_ports:
-  - { external_port: "80", internal_port: "80", port_desc: "Http port (required for http validation only)" }
+  - { external_port: "33060", internal_port: "33060", port_desc: "gRPC port (required for CellsSync)." }
 opt_param_device_map: false
 opt_param_devices:
   - { device_path: "/dev/dri", device_host_path: "/dev/dri", desc: "For hardware transcoding" }
@@ -71,11 +71,12 @@ app_setup_block_enabled: true
 app_setup_block: |
   You must first create a mysql database for Pydio Cells. Using our [mariadb image](https://hub.docker.com/r/linuxserver/mariadb) is recommended.  
 
-  Then access the web gui setup wizard at `http://SERVER_IP:8080`
+  Then access the web gui setup wizard at `https://SERVER_IP:8080` if accessing locally (must set `SERVER_IP` env var), or at `https://pydio-cells.domain.com` if reverse proxying.
 
 
 # changelog
 changelogs:
+  - { date: "18.04.20:", desc: "Switch to https as default (only affects new installs). Add self signed cert, add `SERVER_IP` var for adding to cert as SAN. Add optional gRPC port mapping for CellsSync." }
   - { date: "17.04.20:", desc: "Update compile options, previous release was broken for new installs." }
   - { date: "19.12.19:", desc: "Rebasing to alpine 3.11." }
   - { date: "12.12.19:", desc: "Initial Release" }

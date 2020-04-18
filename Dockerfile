@@ -60,6 +60,13 @@ LABEL maintainer="aptalca"
 
 ENV HOME="/config" CELLS_WORKING_DIR="/config"
 
+RUN \
+ echo "**** install runtime packages ****" && \
+ apk add --no-cache \
+	curl \
+	jq \
+	openssl
+
 COPY --from=buildstage /app/cells /app/cells
 
 COPY root/ /

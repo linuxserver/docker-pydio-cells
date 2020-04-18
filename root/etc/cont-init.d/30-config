@@ -1,5 +1,15 @@
 #!/usr/bin/with-contenv bash
 
+mkdir -p /config/keys
+SERVER_IP=${SERVER_IP:-0.0.0.0}
+if [ -f "/config/keys/cert.crt" ] && openssl x509 -in /config/keys/cert.crt -noout -text | grep -q "$SERVER_IP"; then
+    echo "using existing self signed cert"
+else
+    echo "generating self signed cert with SAN $SERVER_IP"
+    openssl req -new -x509 -days 3650 -nodes -out /config/keys/cert.crt -keyout /config/keys/cert.key -extensions 'v3_req' \
+        -config <(printf "[req]\nprompt=no\ndistinguished_name=all_the_dn_details\nreq_extensions=v3_req\n[all_the_dn_details]\nC=US\nST=CA\nL=Carlsbad\nO=Linuxserver.io\nOU=LSIO Server\nCN=*\n[v3_req]\nsubjectAltName=DNS:pydio-cells,IP:${SERVER_IP}")
+fi
+
 if [ -f /config/pydio.json ]; then
     CURRENTURL=$(jq -r '.defaults.url' /config/pydio.json)
     if [ "$CURRENTURL" != "$EXTERNALURL" ]; then
