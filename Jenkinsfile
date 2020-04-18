@@ -33,7 +33,7 @@ pipeline {
     CI_PORT='8080'
     CI_SSL='true'
     CI_DELAY='120'
-    CI_DOCKERENV='EXTERNALURL=localhost'
+    CI_DOCKERENV='EXTERNALURL=https://localhost:8080'
     CI_AUTH='user:password'
     CI_WEBPATH=''
   }
