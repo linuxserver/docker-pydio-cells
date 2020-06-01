@@ -1,4 +1,4 @@
-FROM lsiobase/alpine:3.11 as buildstage
+FROM lsiobase/alpine:3.12 as buildstage
 
 ARG BUILD_DATE
 ARG VERSION
@@ -51,7 +51,7 @@ RUN \
 	-o /app/cells .
 
 ############## runtime stage ##############
-FROM lsiobase/alpine:3.11
+FROM lsiobase/alpine:3.12
 
 ARG BUILD_DATE
 ARG VERSION
