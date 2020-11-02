@@ -1,4 +1,4 @@
-FROM lsiobase/alpine:3.12 as buildstage
+FROM ghcr.io/linuxserver/baseimage-alpine:3.12 as buildstage
 
 ARG BUILD_DATE
 ARG VERSION
@@ -51,7 +51,7 @@ RUN \
 	-o /app/cells .
 
 ############## runtime stage ##############
-FROM lsiobase/alpine:3.12
+FROM ghcr.io/linuxserver/baseimage-alpine:3.12
 
 ARG BUILD_DATE
 ARG VERSION
