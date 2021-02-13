@@ -230,6 +230,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **23.01.21:** - Rebasing to alpine 3.13.
 * **01.06.20:** - Rebasing to alpine 3.12.
 * **18.04.20:** - Switch to https as default (only affects new installs). Add self signed cert, add `SERVER_IP` var for adding to cert as SAN. Add optional gRPC port mapping for CellsSync.
 * **17.04.20:** - Update compile options, previous release was broken for new installs.
