@@ -1,4 +1,4 @@
-FROM ghcr.io/linuxserver/baseimage-alpine:3.13 as buildstage
+FROM ghcr.io/linuxserver/baseimage-alpine:3.15 as buildstage
 
 ARG BUILD_DATE
 ARG VERSION
@@ -30,6 +30,7 @@ RUN \
 	/tmp/cells-src.tar.gz -C \
 	/tmp/src/github.com/pydio/cells --strip-components=1 && \
  echo "**** compile cells  ****" && \
+ export GO111MODULE=auto && \
  go get -u github.com/pydio/packr/packr && \
  cd /tmp/src/github.com/pydio/cells && \
  find . -name *-packr.go | xargs rm -f && \
@@ -51,7 +52,7 @@ RUN \
 	-o /app/cells .
 
 ############## runtime stage ##############
-FROM ghcr.io/linuxserver/baseimage-alpine:3.13
+FROM ghcr.io/linuxserver/baseimage-alpine:3.15
 
 ARG BUILD_DATE
 ARG VERSION
