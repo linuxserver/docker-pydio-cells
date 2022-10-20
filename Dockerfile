@@ -1,21 +1,28 @@
-FROM ghcr.io/linuxserver/baseimage-alpine:3.15 as buildstage
+FROM ghcr.io/linuxserver/baseimage-alpine:3.16
 
 ARG BUILD_DATE
 ARG VERSION
 ARG CELLS_RELEASE
+LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
+LABEL maintainer="aptalca"
 
-ENV GOPATH="/tmp"
+ENV \
+	HOME="/config" \
+	CELLS_WORKING_DIR="/config" \
+	GOPATH="/tmp"
 
 RUN \
  echo "**** install build packages ****" && \
  apk add --no-cache --virtual=build-dependencies \
-	curl \
 	g++ \
 	gcc \
 	git \
 	go \
 	grep \
 	tar && \
+ echo "**** install runtime packages ****" && \
+ apk add --no-cache \
+	openssl && \
  echo "**** fetch source code ****" && \
  mkdir -p \
 	/tmp/src/github.com/pydio/cells && \
@@ -30,44 +37,19 @@ RUN \
 	/tmp/cells-src.tar.gz -C \
 	/tmp/src/github.com/pydio/cells --strip-components=1 && \
  echo "**** compile cells  ****" && \
- export GO111MODULE=auto && \
- go get -u github.com/pydio/packr/packr && \
  cd /tmp/src/github.com/pydio/cells && \
- find . -name *-packr.go | xargs rm -f && \
- grep -ri --exclude-dir=vendor/* --exclude-dir=frontend/front-srv/assets/* -l "packr.NewBox" */* | \
-	while read -r line; do \
-		if ! [ "$$line" = "vendor/github.com/ory/x/dbal/migrate.go" ]; then \
-			cd `dirname "$$line"`; \
-			echo "Run packr for $$line"; \
-			${GOPATH}/bin/packr --compress --input=. ; \
-			cd -; \
-		fi; \
-	done && \
- go build -a \
-	-ldflags "-X github.com/pydio/cells/common.version=${CELLS_RELEASE:1} \
-	-X github.com/pydio/cells/common.BuildStamp=${BUILD_DATE} \
-	-X github.com/pydio/cells/common.BuildRevision=${VERSION} \
-	-X github.com/pydio/cells/vendor/github.com/pydio/minio-srv/cmd.Version=${VERSION} \
-	-X github.com/pydio/cells/vendor/github.com/pydio/minio-srv/cmd.ReleaseTag=${VERSION}" \
-	-o /app/cells .
-
-############## runtime stage ##############
-FROM ghcr.io/linuxserver/baseimage-alpine:3.15
-
-ARG BUILD_DATE
-ARG VERSION
-LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
-LABEL maintainer="aptalca"
-
-ENV HOME="/config" CELLS_WORKING_DIR="/config"
-
-RUN \
- echo "**** install runtime packages ****" && \
- apk add --no-cache \
-	curl \
-	jq \
-	openssl
-
-COPY --from=buildstage /app/cells /app/cells
+ GOARCH=amd64 GOOS=linux go build -trimpath \
+ 	-ldflags "\
+	-X github.com/pydio/cells/v4/common.version=${CELLS_RELEASE:1} \
+	-X github.com/pydio/cells/v4/common.BuildStamp=${BUILD_DATE} \
+	-X github.com/pydio/cells/v4/common.BuildRevision=${VERSION}" \
+	-o /app/cells . && \
+ echo "**** cleanup ****" && \
+ apk del --purge \
+	build-dependencies && \
+ rm -rf \
+	/tmp/* \
+	"${HOME}"/.cache \
+	"${HOME}"/go
 
 COPY root/ /
