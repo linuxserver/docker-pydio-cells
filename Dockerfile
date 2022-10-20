@@ -9,7 +9,8 @@ LABEL maintainer="aptalca"
 ENV \
 	HOME="/config" \
 	CELLS_WORKING_DIR="/config" \
-	GOPATH="/tmp"
+	GOPATH="/tmp" \
+	CELLS_GRPC_PORT="33060"
 
 RUN \
  echo "**** install build packages ****" && \

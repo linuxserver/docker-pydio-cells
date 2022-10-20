@@ -1,7 +1,7 @@
 #!/usr/bin/with-contenv bash
 
 if [ -f /config/pydio.json ]; then
-    RUN_OPTS="start --grpc_external=33060 --log=production"
+    RUN_OPTS="start --log=production"
 else
     RUN_OPTS="install --bind 0.0.0.0:8080 --external $EXTERNALURL --tls_cert_file /config/keys/cert.crt --tls_key_file /config/keys/cert.key"
 fi
