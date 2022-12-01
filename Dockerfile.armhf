@@ -1,4 +1,4 @@
-FROM ghcr.io/linuxserver/baseimage-alpine:3.17
+FROM ghcr.io/linuxserver/baseimage-alpine:arm32v7-3.17
 
 ARG BUILD_DATE
 ARG VERSION
@@ -39,7 +39,7 @@ RUN \
     /tmp/src/github.com/pydio/cells --strip-components=1 && \
   echo "**** compile cells  ****" && \
   cd /tmp/src/github.com/pydio/cells && \
-  GOARCH=amd64 GOOS=linux go build -trimpath \
+  GOARCH=arm GOOS=linux go build -trimpath \
     -ldflags "\
     -X github.com/pydio/cells/v4/common.version=${CELLS_RELEASE:1} \
     -X github.com/pydio/cells/v4/common.BuildStamp=${BUILD_DATE} \
