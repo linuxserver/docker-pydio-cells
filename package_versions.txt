@@ -245,7 +245,7 @@ github.com/mattn/go-runewidth                                                 v0
 github.com/matttproud/golang_protobuf_extensions                              v1.0.4                                 go-module  
 github.com/mgutz/ansi                                                         v0.0.0-20200706080929-d51e80ef957d     go-module  
 github.com/mholt/acmez                                                        v1.0.4                                 go-module  
-github.com/microcosm-cc/bluemonday                                            v1.0.20                                go-module  
+github.com/microcosm-cc/bluemonday                                            v1.0.23                                go-module  
 github.com/micromdm/scep/v2                                                   v2.1.0                                 go-module  
 github.com/miekg/dns                                                          v1.1.50                                go-module  
 github.com/minio/cli                                                          v1.22.0                                go-module  
@@ -426,12 +426,12 @@ gocloud.dev/pubsub/rabbitpubsub                                               v0
 golang.org/x/crypto                                                           v0.6.0                                 go-module  
 golang.org/x/exp                                                              v0.0.0-20220909182711-5c715a9e8561     go-module  
 golang.org/x/image                                                            v0.5.0                                 go-module  
-golang.org/x/net                                                              v0.7.0                                 go-module  
+golang.org/x/net                                                              v0.8.0                                 go-module  
 golang.org/x/oauth2                                                           v0.0.0-20220909003341-f21342109be1     go-module  
-golang.org/x/sync                                                             v0.0.0-20220907140024-f12130a52804     go-module  
-golang.org/x/sys                                                              v0.5.0                                 go-module  
-golang.org/x/term                                                             v0.5.0                                 go-module  
-golang.org/x/text                                                             v0.7.0                                 go-module  
+golang.org/x/sync                                                             v0.1.0                                 go-module  
+golang.org/x/sys                                                              v0.6.0                                 go-module  
+golang.org/x/term                                                             v0.6.0                                 go-module  
+golang.org/x/text                                                             v0.8.0                                 go-module  
 golang.org/x/time                                                             v0.0.0-20220722155302-e5dcc9cfc0b9     go-module  
 golang.org/x/xerrors                                                          v0.0.0-20220907171357-04be3eba64a2     go-module  
 google.golang.org/api                                                         v0.88.0                                go-module  
@@ -469,7 +469,7 @@ ncurses-terminfo-base                                                         6.
 netcat-openbsd                                                                1.130-r4                               apk        
 nghttp2-libs                                                                  1.51.0-r0                              apk        
 oniguruma                                                                     6.9.8-r0                               apk        
-openssl                                                                       3.0.8-r0                               apk        
+openssl                                                                       3.0.8-r1                               apk        
 procps                                                                        3.3.17-r2                              apk        
 readline                                                                      8.2.0-r0                               apk        
 scanelf                                                                       1.3.5-r1                               apk        
