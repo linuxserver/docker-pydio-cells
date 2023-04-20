@@ -12,7 +12,7 @@ busybox-binsh                                                                 1.
 ca-certificates                                                               20220614-r4                            apk        
 ca-certificates-bundle                                                        20220614-r4                            apk        
 coreutils                                                                     9.1-r0                                 apk        
-curl                                                                          7.88.1-r1                              apk        
+curl                                                                          8.0.1-r0                               apk        
 filippo.io/edwards25519                                                       v1.0.0-rc.1                            go-module  
 git.apache.org/thrift.git                                                     v0.13.0                                go-module  
 github.com/AndreasBriese/bbloom                                               v0.0.0-20190825152654-46b345b51c96     go-module  
@@ -456,7 +456,7 @@ libattr                                                                       2.
 libbsd                                                                        0.11.7-r0                              apk        
 libc-utils                                                                    0.7.2-r3                               apk        
 libcrypto3                                                                    3.0.8-r3                               apk        
-libcurl                                                                       7.88.1-r1                              apk        
+libcurl                                                                       8.0.1-r0                               apk        
 libintl                                                                       0.21.1-r1                              apk        
 libmd                                                                         1.0.4-r0                               apk        
 libproc                                                                       3.3.17-r2                              apk        
