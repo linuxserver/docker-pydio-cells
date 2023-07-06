@@ -56,7 +56,7 @@ The architectures supported by this image are:
 | :----: | :----: | ---- |
 | x86-64 | ✅ | amd64-\<version tag\> |
 | arm64 | ✅ | arm64v8-\<version tag\> |
-| armhf | ✅ | arm32v7-\<version tag\> |
+| armhf | ❌ | |
 
 ## Application Setup
 
@@ -241,6 +241,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **06.07.23:** - Deprecate armhf. As announced [here](https://www.linuxserver.io/blog/a-farewell-to-arm-hf)
 * **01.12.22:** - Rebasing to alpine 3.17. Adding multi-arch support. Updating cli arguments for v4 compatibility.
 * **19.10.22:** - Rebasing to alpine 3.16. Upgrading to s6v3. Updating build instructions for v4.
 * **19.09.22:** - Rebasing to alpine 3.15.
