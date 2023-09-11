@@ -310,7 +310,7 @@ github.com/pydio/caddyvault                                                   v1
 github.com/pydio/cells/v4                                                     (devel)                                go-module  
 github.com/pydio/go                                                           v0.0.0-20191211170306-d00ac19450ef     go-module  
 github.com/pydio/melody                                                       v0.0.0-20190928133520-4271c6513fb6     go-module  
-github.com/pydio/minio                                                        v0.0.0-20230301104210-859d91c9822e     go-module  
+github.com/pydio/minio                                                        v0.0.0-20230809141052-8bd460a77d09     go-module  
 github.com/pydio/pydio-sdk-go                                                 v0.0.0-20190116153840-23ce5c39e65c     go-module  
 github.com/r3labs/diff/v3                                                     v3.0.0                                 go-module  
 github.com/rcrowley/go-metrics                                                v0.0.0-20201227073835-cf1acfcdf475     go-module  
