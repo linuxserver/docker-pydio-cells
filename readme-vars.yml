@@ -64,6 +64,7 @@ app_setup_block_enabled: true
 app_setup_block: "You must first create a mysql database for Pydio Cells. Using our [mariadb image](https://hub.docker.com/r/linuxserver/mariadb) is recommended.  \n\nThen access the web gui setup wizard at `https://SERVER_IP:8080` if accessing locally (must set `SERVER_IP` env var), or at `https://pydio-cells.domain.com` if reverse proxying.\n"
 # changelog
 changelogs:
+  - {date: "11.10.23:", desc: "Rebasing to alpine 3.18. Build on alpine edge with Go 1.21."}
   - {date: "06.07.23:", desc: "Deprecate armhf. As announced [here](https://www.linuxserver.io/blog/a-farewell-to-arm-hf)"}
   - {date: "01.12.22:", desc: "Rebasing to alpine 3.17. Adding multi-arch support. Updating cli arguments for v4 compatibility."}
   - {date: "19.10.22:", desc: "Rebasing to alpine 3.16. Upgrading to s6v3. Updating build instructions for v4."}

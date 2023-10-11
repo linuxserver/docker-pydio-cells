@@ -306,6 +306,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **11.10.23:** - Rebasing to alpine 3.18. Build on alpine edge with Go 1.21.
 * **06.07.23:** - Deprecate armhf. As announced [here](https://www.linuxserver.io/blog/a-farewell-to-arm-hf)
 * **01.12.22:** - Rebasing to alpine 3.17. Adding multi-arch support. Updating cli arguments for v4 compatibility.
 * **19.10.22:** - Rebasing to alpine 3.16. Upgrading to s6v3. Updating build instructions for v4.
