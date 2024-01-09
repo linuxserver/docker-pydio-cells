@@ -221,7 +221,7 @@ github.com/json-iterator/go                                                   v1
 github.com/julienschmidt/httprouter                                           v1.3.0                                  go-module  
 github.com/kardianos/osext                                                    v0.0.0-20190222173326-2bc1f35cddc0      go-module  
 github.com/kballard/go-shellquote                                             v0.0.0-20180428030007-95032a82bc51      go-module  
-github.com/klauspost/compress                                                 v1.17.3                                 go-module  
+github.com/klauspost/compress                                                 v1.17.4                                 go-module  
 github.com/klauspost/cpuid/v2                                                 v2.2.6                                  go-module  
 github.com/klauspost/pgzip                                                    v1.2.5                                  go-module  
 github.com/klauspost/readahead                                                v1.4.0                                  go-module  
@@ -253,9 +253,9 @@ github.com/miekg/dns                                                          v1
 github.com/minio/cli                                                          v1.22.0                                 go-module  
 github.com/minio/highwayhash                                                  v1.0.2                                  go-module  
 github.com/minio/md5-simd                                                     v1.1.2                                  go-module  
-github.com/minio/minio-go/v7                                                  v7.0.21                                 go-module  
+github.com/minio/minio-go/v7                                                  v7.0.65                                 go-module  
 github.com/minio/selfupdate                                                   v0.4.0                                  go-module  
-github.com/minio/sha256-simd                                                  v1.0.0                                  go-module  
+github.com/minio/sha256-simd                                                  v1.0.1                                  go-module  
 github.com/minio/simdjson-go                                                  v0.2.1                                  go-module  
 github.com/minio/sio                                                          v0.3.0                                  go-module  
 github.com/mitchellh/colorstring                                              v0.0.0-20190213212951-d06e56a500db      go-module  
@@ -309,7 +309,7 @@ github.com/pydio/caddyvault                                                   v1
 github.com/pydio/cells/v4                                                     (devel)                                 go-module  
 github.com/pydio/go                                                           v0.0.0-20191211170306-d00ac19450ef      go-module  
 github.com/pydio/melody                                                       v0.0.0-20190928133520-4271c6513fb6      go-module  
-github.com/pydio/minio                                                        v0.0.0-20230809141052-8bd460a77d09      go-module  
+github.com/pydio/minio                                                        v0.0.0-20240105133831-b78b44f45a00      go-module  
 github.com/pydio/pydio-sdk-go                                                 v0.0.0-20190116153840-23ce5c39e65c      go-module  
 github.com/quic-go/qpack                                                      v0.4.0                                  go-module  
 github.com/quic-go/quic-go                                                    v0.40.0                                 go-module  
@@ -432,7 +432,7 @@ go.uber.org/multierr                                                          v1
 go.uber.org/zap                                                               v1.26.0                                 go-module  
 gocloud.dev                                                                   v0.20.0                                 go-module  
 gocloud.dev/pubsub/rabbitpubsub                                               v0.20.0                                 go-module  
-golang.org/x/crypto                                                           v0.16.0                                 go-module  
+golang.org/x/crypto                                                           v0.17.0                                 go-module  
 golang.org/x/exp                                                              v0.0.0-20231127185646-65229373498e      go-module  
 golang.org/x/image                                                            v0.14.0                                 go-module  
 golang.org/x/net                                                              v0.19.0                                 go-module  
