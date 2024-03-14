@@ -48,7 +48,7 @@ opt_param_env_vars:
 opt_param_usage_include_vols: false
 opt_param_volumes:
   - {vol_path: "/config", vol_host_path: "/path/to/appdata/config", desc: "Folder where configuration and data files reside."}
-opt_param_usage_include_ports: true
+opt_param_usage_include_ports: false
 opt_param_ports:
   - {external_port: "33060", internal_port: "33060", port_desc: "gRPC port (required for CellsSync)."}
 opt_param_device_map: false
@@ -64,6 +64,7 @@ app_setup_block_enabled: true
 app_setup_block: "You must first create a mysql database for Pydio Cells. Using our [mariadb image](https://hub.docker.com/r/linuxserver/mariadb) is recommended.  \n\nThen access the web gui setup wizard at `https://SERVER_IP:8080` if accessing locally (must set `SERVER_IP` env var), or at `https://pydio-cells.domain.com` if reverse proxying.\n"
 # changelog
 changelogs:
+  - {date: "14.03.24:", desc: "Rebasing to alpine 3.19. Grpc port defaults to 8080."}
   - {date: "11.10.23:", desc: "Rebasing to alpine 3.18. Build on alpine edge with Go 1.21."}
   - {date: "06.07.23:", desc: "Deprecate armhf. As announced [here](https://www.linuxserver.io/blog/a-farewell-to-arm-hf)"}
   - {date: "01.12.22:", desc: "Rebasing to alpine 3.17. Adding multi-arch support. Updating cli arguments for v4 compatibility."}

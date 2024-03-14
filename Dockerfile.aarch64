@@ -7,8 +7,7 @@ ARG CELLS_RELEASE
 ENV \
   HOME="/config" \
   CELLS_WORKING_DIR="/config" \
-  GOPATH="/tmp" \
-  CELLS_GRPC_PORT="33060"
+  GOPATH="/tmp"
 
 RUN \
   echo "**** install build packages ****" && \
@@ -45,7 +44,7 @@ RUN \
     "${HOME}"/.cache \
     "${HOME}"/go
 
-FROM ghcr.io/linuxserver/baseimage-alpine:arm64v8-3.18
+FROM ghcr.io/linuxserver/baseimage-alpine:arm64v8-3.19
 
 ARG BUILD_DATE
 ARG VERSION
@@ -55,8 +54,7 @@ LABEL maintainer="aptalca"
 ENV \
   HOME="/config" \
   CELLS_WORKING_DIR="/config" \
-  GOPATH="/tmp" \
-  CELLS_GRPC_PORT="33060"
+  GOPATH="/tmp"
 
 RUN \
   echo "**** install runtime packages ****" && \
