@@ -64,4 +64,4 @@ RUN \
 COPY --from=buildstage /app/cells /app/
 
 COPY root/ /
-RUN PATH=/app/:$PATH
+RUN export PATH=/app/:$PATH
