@@ -56,12 +56,13 @@ ENV \
   CELLS_WORKING_DIR="/config" \
   GOPATH="/tmp"
 
+COPY --from=buildstage /app/cells /app/
+COPY root/ /
+
 RUN \
   echo "**** install runtime packages ****" && \
   apk add --no-cache \
-    openssl
+    openssl && \
+  export PATH=/app/:$PATH
 
-COPY --from=buildstage /app/cells /app/
 
-COPY root/ /
-RUN export PATH=/app/:$PATH
