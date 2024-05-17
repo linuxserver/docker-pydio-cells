@@ -54,15 +54,14 @@ LABEL maintainer="aptalca"
 ENV \
   HOME="/config" \
   CELLS_WORKING_DIR="/config" \
-  GOPATH="/tmp"
-
-COPY --from=buildstage /app/cells /app/
-COPY root/ /
+  GOPATH="/tmp" \
+  PATH=/app/:$PATH
 
 RUN \
   echo "**** install runtime packages ****" && \
   apk add --no-cache \
-    openssl && \
-  export PATH=/app/:$PATH
+    openssl
 
+COPY --from=buildstage /app/cells /app/
 
+COPY root/ /
