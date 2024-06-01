@@ -54,7 +54,8 @@ LABEL maintainer="aptalca"
 ENV \
   HOME="/config" \
   CELLS_WORKING_DIR="/config" \
-  GOPATH="/tmp"
+  GOPATH="/tmp" \
+  PATH=/app/:$PATH
 
 RUN \
   echo "**** install runtime packages ****" && \
