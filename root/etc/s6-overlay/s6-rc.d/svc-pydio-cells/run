@@ -1,7 +1,7 @@
 #!/usr/bin/with-contenv bash
 # shellcheck shell=bash
 
-if [ -f /config/pydio.json ]; then
+if [[ -f /config/pydio.json ]]; then
     RUN_OPTS="start --log=production"
 else
     RUN_OPTS="configure --site_bind 0.0.0.0:8080 --site_external $EXTERNALURL --tls_cert_file /config/keys/cert.crt --tls_key_file /config/keys/cert.key"

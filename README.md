@@ -41,7 +41,7 @@ Find us at:
 
 [Pydio-cells](https://pydio.com/) is the nextgen file sharing platform for organizations. It is a full rewrite of the Pydio project using the Go language following a micro-service architecture.
 
-[![pydio-cells](https://raw.githubusercontent.com/wiki/pydio/cells/images/PydioCellsColor.png)](https://pydio.com/)
+[![pydio-cells](https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/pydio-cells-icon.png)](https://pydio.com/)
 
 ## Supported Architectures
 
@@ -59,7 +59,7 @@ The architectures supported by this image are:
 
 ## Application Setup
 
-You must first create a mysql database for Pydio Cells. Using our [mariadb image](https://hub.docker.com/r/linuxserver/mariadb) is recommended.  
+You must first create a mysql database for Pydio Cells. Using our [mariadb image](https://hub.docker.com/r/linuxserver/mariadb) is recommended.
 
 Then access the web gui setup wizard at `https://SERVER_IP:8080` if accessing locally (must set `SERVER_IP` env var), or at `https://pydio-cells.domain.com` if reverse proxying.
 
@@ -88,7 +88,7 @@ services:
       - EXTERNALURL=yourdomain.url
       - SERVER_IP=0.0.0.0 #optional
     volumes:
-      - /path/to/appdata/config:/config
+      - /path/to/pydio-cells/config:/config
     ports:
       - 8080:8080
     restart: unless-stopped
@@ -106,7 +106,7 @@ docker run -d \
   -e EXTERNALURL=yourdomain.url \
   -e SERVER_IP=0.0.0.0 `#optional` \
   -p 8080:8080 \
-  -v /path/to/appdata/config:/config \
+  -v /path/to/pydio-cells/config:/config \
   --restart unless-stopped \
   lscr.io/linuxserver/pydio-cells:latest
 ```
@@ -287,6 +287,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **27.06.24:** - Rebasing to Alpine 3.20..
 * **14.03.24:** - Rebasing to alpine 3.19. Grpc port defaults to 8080.
 * **11.10.23:** - Rebasing to alpine 3.18. Build on alpine edge with Go 1.21.
 * **06.07.23:** - Deprecate armhf. As announced [here](https://www.linuxserver.io/blog/a-farewell-to-arm-hf)
