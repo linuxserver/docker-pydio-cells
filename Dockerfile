@@ -44,7 +44,7 @@ RUN \
     "${HOME}"/.cache \
     "${HOME}"/go
 
-FROM ghcr.io/linuxserver/baseimage-alpine:3.19
+FROM ghcr.io/linuxserver/baseimage-alpine:3.20
 
 ARG BUILD_DATE
 ARG VERSION
@@ -60,7 +60,8 @@ ENV \
 RUN \
   echo "**** install runtime packages ****" && \
   apk add --no-cache \
-    openssl
+    openssl && \
+  printf "Linuxserver.io version: ${VERSION}\nBuild-date: ${BUILD_DATE}" > /build_version
 
 COPY --from=buildstage /app/cells /app/
 
