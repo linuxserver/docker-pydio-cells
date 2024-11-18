@@ -312,7 +312,7 @@ github.com/prometheus/client_model                                            v0
 github.com/prometheus/common                                                  v0.54.0                                 go-module    
 github.com/prometheus/procfs                                                  v0.15.1                                 go-module    
 github.com/pydio/caddyvault                                                   v1.0.3                                  go-module    
-github.com/pydio/cells/v4                                                     v4.4.6                                  go-module    
+github.com/pydio/cells/v4                                                     v4.4.7                                  go-module    
 github.com/pydio/go                                                           v0.0.0-20191211170306-d00ac19450ef      go-module    
 github.com/pydio/melody                                                       v0.0.0-20190928133520-4271c6513fb6      go-module    
 github.com/pydio/minio                                                        v0.0.0-20240105133831-b78b44f45a00      go-module    
