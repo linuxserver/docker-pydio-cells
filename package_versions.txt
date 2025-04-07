@@ -315,7 +315,7 @@ github.com/pydio/caddyvault                                                   v1
 github.com/pydio/cells/v4                                                     (devel)                                 go-module    
 github.com/pydio/go                                                           v0.0.0-20191211170306-d00ac19450ef      go-module    
 github.com/pydio/melody                                                       v0.0.0-20190928133520-4271c6513fb6      go-module    
-github.com/pydio/minio                                                        v0.0.0-20250211141632-fd38661ac313      go-module    
+github.com/pydio/minio                                                        v0.0.0-20250318140833-4b1cea701e67      go-module    
 github.com/pydio/pydio-sdk-go                                                 v0.0.0-20190116153840-23ce5c39e65c      go-module    
 github.com/quic-go/qpack                                                      v0.5.1                                  go-module    
 github.com/quic-go/quic-go                                                    v0.48.2                                 go-module    
