@@ -83,7 +83,8 @@ init_diagram: |
   "pydio-cells:latest" <- Base Images
 # changelog
 changelogs:
-  - {date: "27.06.24:", desc: "Rebasing to Alpine 3.20.."}
+  - {date: "27.07.25:", desc: "Rebasing to Alpine 3.22."}
+  - {date: "27.06.24:", desc: "Rebasing to Alpine 3.20."}
   - {date: "14.03.24:", desc: "Rebasing to alpine 3.19. Grpc port defaults to 8080."}
   - {date: "11.10.23:", desc: "Rebasing to alpine 3.18. Build on alpine edge with Go 1.21."}
   - {date: "06.07.23:", desc: "Deprecate armhf. As announced [here](https://www.linuxserver.io/blog/a-farewell-to-arm-hf)"}

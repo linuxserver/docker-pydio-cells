@@ -288,7 +288,8 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
-* **27.06.24:** - Rebasing to Alpine 3.20..
+* **27.07.25:** - Rebasing to Alpine 3.22.
+* **27.06.24:** - Rebasing to Alpine 3.20.
 * **14.03.24:** - Rebasing to alpine 3.19. Grpc port defaults to 8080.
 * **11.10.23:** - Rebasing to alpine 3.18. Build on alpine edge with Go 1.21.
 * **06.07.23:** - Deprecate armhf. As announced [here](https://www.linuxserver.io/blog/a-farewell-to-arm-hf)
