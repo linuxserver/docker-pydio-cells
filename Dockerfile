@@ -44,7 +44,7 @@ RUN \
     "${HOME}"/.cache \
     "${HOME}"/go
 
-FROM ghcr.io/linuxserver/baseimage-alpine:3.20
+FROM ghcr.io/linuxserver/baseimage-alpine:3.22
 
 ARG BUILD_DATE
 ARG VERSION
