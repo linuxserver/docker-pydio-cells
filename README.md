@@ -288,6 +288,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **17.07.26:** - Rebasing to Alpine 3.24.
 * **27.07.25:** - Rebasing to Alpine 3.22.
 * **27.06.24:** - Rebasing to Alpine 3.20.
 * **14.03.24:** - Rebasing to alpine 3.19. Grpc port defaults to 8080.
