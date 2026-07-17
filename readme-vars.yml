@@ -74,7 +74,7 @@ init_diagram: |
     svc-pydio-cells -> legacy-services
   }
   Base Images: {
-    "baseimage-alpine:3.22"
+    "baseimage-alpine:3.24"
   }
   "pydio-cells:latest" <- Base Images
 # changelog
