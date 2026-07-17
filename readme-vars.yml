@@ -79,6 +79,7 @@ init_diagram: |
   "pydio-cells:latest" <- Base Images
 # changelog
 changelogs:
+  - {date: "17.07.26:", desc: "Rebasing to Alpine 3.24."}
   - {date: "27.07.25:", desc: "Rebasing to Alpine 3.22."}
   - {date: "27.06.24:", desc: "Rebasing to Alpine 3.20."}
   - {date: "14.03.24:", desc: "Rebasing to alpine 3.19. Grpc port defaults to 8080."}

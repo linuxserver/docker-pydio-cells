@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 
-FROM ghcr.io/linuxserver/baseimage-alpine:edge as buildstage
+FROM ghcr.io/linuxserver/baseimage-alpine:edge AS buildstage
 
 ARG CELLS_RELEASE
 
@@ -44,7 +44,7 @@ RUN \
     "${HOME}"/.cache \
     "${HOME}"/go
 
-FROM ghcr.io/linuxserver/baseimage-alpine:3.22
+FROM ghcr.io/linuxserver/baseimage-alpine:3.24
 
 ARG BUILD_DATE
 ARG VERSION
