@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 
-FROM ghcr.io/linuxserver/baseimage-alpine:edge as buildstage
+FROM ghcr.io/linuxserver/baseimage-alpine:edge AS buildstage
 
 ARG CELLS_RELEASE
 
