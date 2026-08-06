@@ -4,7 +4,7 @@ alpine-baselayout                                                             3.
 alpine-baselayout-data                                                        3.7.2-r1                                   apk          
 alpine-keys                                                                   2.6-r0                                     apk          
 alpine-release                                                                3.24.1-r0                                  apk          
-apk-tools                                                                     3.0.6-r0                                   apk          
+apk-tools                                                                     3.0.7-r0                                   apk          
 bash                                                                          5.3.9-r1                                   apk          
 brotli-libs                                                                   1.2.0-r1                                   apk          
 buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go                    v1.36.1-20241127180247-a33202765966.1      go-module    
@@ -532,7 +532,7 @@ k8s.io/client-go                                                              v0
 k8s.io/klog/v2                                                                v2.130.1                                   go-module    
 k8s.io/kube-openapi                                                           v0.0.0-20250910181357-589584f1c912         go-module    
 k8s.io/utils                                                                  v0.0.0-20251002143259-bc988d571ff4         go-module    
-libapk                                                                        3.0.6-r0                                   apk          
+libapk                                                                        3.0.7-r0                                   apk          
 libattr                                                                       2.5.2-r2                                   apk          
 libbsd                                                                        0.12.2-r0                                  apk          
 libcrypto3                                                                    3.5.7-r0                                   apk          
