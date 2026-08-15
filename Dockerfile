@@ -20,7 +20,7 @@ RUN \
     /tmp/src/github.com/pydio/cells && \
   if [ -z ${CELLS_RELEASE+x} ]; then \
     CELLS_RELEASE=$(curl -sX GET "https://api.github.com/repos/pydio/cells/releases/latest" \
-      | awk '/tag_name/{print $4;exit}' FS='[""]'); \
+      | jq -r '.tag_name'); \
   fi && \
   curl -o \
     /tmp/cells-src.tar.gz -L \
