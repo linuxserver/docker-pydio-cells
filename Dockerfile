@@ -19,8 +19,9 @@ RUN \
   mkdir -p \
     /tmp/src/github.com/pydio/cells && \
   if [ -z ${CELLS_RELEASE+x} ]; then \
-    CELLS_RELEASE=$(curl -sX GET "https://api.github.com/repos/pydio/cells/releases/latest" \
-      | awk '/tag_name/{print $4;exit}' FS='[""]'); \
+    CELLS_RELEASE=$(curl -sX GET https://api.github.com/repos/pydio/cells/releases \
+      | jq -r '.[] | select(.prerelease != true) | .tag_name' \
+      | sort -rV | head -1); \
   fi && \
   curl -o \
     /tmp/cells-src.tar.gz -L \
