@@ -149,7 +149,7 @@ pipeline {
       steps{
         script{
           env.EXT_RELEASE = sh(
-            script: ''' curl -sX GET https://api.github.com/repos/pydio/cells/releases | jq -r '.[] | select(.prerelease != true) | .tag_name' | sed 's|^v||g' | sort -rV | head -1 ''',
+            script: ''' curl -sX GET https://api.github.com/repos/pydio/cells/releases | jq -r '.[] | select(.prerelease != true) | .tag_name' | sort -rV | head -1 ''',
             returnStdout: true).trim()
             env.RELEASE_LINK = 'custom_command'
         }
